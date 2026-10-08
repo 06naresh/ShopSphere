@@ -1,0 +1,51 @@
+/* ========================================
+   ShopSphere Global Application Styles
+   ======================================== */
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  min-width: 320px;
+}
+
+/* Remove default link underline */
+
+a {
+  color: inherit;
+}
+
+/* Better image rendering */
+
+img {
+  display: block;
+  max-width: 100%;
+}
+
+/* Form elements */
+
+button,
+input,
+select,
+textarea {
+  font: inherit;
+}
+
+/* Better focus accessibility */
+
+button:focus-visible,
+input:focus-visible,
+select:focus-visible,
+textarea:focus-visible,
+a:focus-visible {
+  outline: 2px solid #3b82f6;
+  outline-offset: 2px;
+}
+
+/* Prevent horizontal overflow */
+
+#root {
+  min-height: 100vh;
+  overflow-x: hidden;
+}
