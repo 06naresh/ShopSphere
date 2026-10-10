@@ -10,8 +10,23 @@ import {
 import {
   CartBadge,
 } from "../../cart";
+import { Link, NavLink, useNavigate } from "react-router-dom";
 
 function Header({ cartCount }) {
+
+  const navigate = useNavigate();
+
+  const navClass = ({ isActive }) =>
+    `
+      font-medium
+      no-underline
+      transition
+      ${isActive
+      ? "text-blue-600 dark:text-blue-400"
+      : "text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
+    }
+    `;
+
   return (
     <AppBar
       position="sticky"
@@ -31,15 +46,21 @@ function Header({ cartCount }) {
           mx: "auto",
         }}
       >
-        <Typography
-          variant="h6"
-          sx={{
-            fontWeight: 700,
-            flexGrow: 1,
-          }}
+
+        <Link
+          to="/"
+          className="flex-1 no-underline"
         >
-          🛍 ShopSphere
-        </Typography>
+          <Typography
+            variant="h6"
+            sx={{
+              fontWeight: 700,
+              flexGrow: 1,
+            }}
+          >
+            🛍 ShopSphere
+          </Typography>
+        </Link>
 
         <Box
           sx={{
@@ -51,26 +72,34 @@ function Header({ cartCount }) {
             gap: 3,
           }}
         >
-          <a
-            href="#products"
-            className="font-medium no-underline text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
+
+          <NavLink
+            to="/"
+            className={navClass}
+          >
+            Home
+          </NavLink>
+
+          <NavLink
+            to="/products"
+            className={navClass}
           >
             Products
-          </a>
+          </NavLink>
 
-          <a
-            href="#categories"
-            className="font-medium no-underline text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
-          >
-            Categories
-          </a>
-
-          <a
-            href="#cart"
-            className="font-medium no-underline text-gray-700 hover:text-blue-600 dark:text-gray-200 dark:hover:text-blue-400"
+          <NavLink
+            to="/cart"
+            className={navClass}
           >
             Cart
-          </a>
+          </NavLink>
+
+          <NavLink
+            to="/admin"
+            className={navClass}
+          >
+            Admin
+          </NavLink>
         </Box>
 
         <Box sx={{ ml: 3 }}>

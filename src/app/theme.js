@@ -1,6 +1,6 @@
 import { createTheme } from "@mui/material/styles";
 
-export const createAppTheme = (node) => {
+export const createAppTheme = (mode) => {
     return createTheme({
         palette:{
             mode,

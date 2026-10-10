@@ -4,5 +4,7 @@ export { default as SearchBar } from "./components/SearchBar";
 export { default as CategoryFilter } from "./components/CategoryFilter";
 export { default as ProductControls } from "./components/ProductControls";
 export { default as Pagination } from "./components/Pagination";
+export { default as ProductsLayout } from "./components/ProductsLayout";
 
 export { default as useProducts } from "./hooks/useProducts";
+export { default as useProduct } from "./hooks/useProduct";

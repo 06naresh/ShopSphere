@@ -1,3 +1,4 @@
+import { Link } from "react-router-dom";
 import Button from "../../../shared/components/Button";
 import Card from "../../../shared/components/Card";
 
@@ -7,11 +8,15 @@ function ProductCard({
 }) {
   return (
     <Card className="overflow-hidden p-0">
-      <div className="h-52 overflow-hidden bg-gray-100 dark:bg-gray-700">
-        <img
-          src={product.image}
-          alt={product.name}
-          className="
+      <Link
+        to={`/products/${product.id}`}
+        className="block no-underline"
+      >
+        <div className="h-52 overflow-hidden bg-gray-100 dark:bg-gray-700">
+          <img
+            src={product.image}
+            alt={product.name}
+            className="
             h-full
             w-full
             object-cover
@@ -19,8 +24,9 @@ function ProductCard({
             duration-300
             hover:scale-105
           "
-        />
-      </div>
+          />
+        </div>
+      </Link>
 
       <div className="p-5">
         <span
@@ -40,9 +46,15 @@ function ProductCard({
           {product.category}
         </span>
 
+        <Link
+          to={`/products/${product.id}`}
+          className="no-underline"
+        >
+
         <h3 className="mt-3 text-lg font-semibold text-gray-900 dark:text-white">
           {product.name}
         </h3>
+        </Link>
 
         <p className="mt-2 line-clamp-2 text-sm text-gray-600 dark:text-gray-300">
           {product.description}
@@ -60,7 +72,7 @@ function ProductCard({
 
         <div className="mt-5 flex items-center justify-between gap-3">
           <strong className="text-xl font-bold text-gray-900 dark:text-white">
-            ₹{product.price.toLocaleString()}
+            ${product.price.toLocaleString()}
           </strong>
 
           {product.inStock ? (
@@ -81,6 +93,13 @@ function ProductCard({
             </Button>
           )}
         </div>
+
+        <Link
+          to={`/products/${product.id}`}
+          className="mt-4 block text-center text-sm font-medium text-blue-600 hover:text-blue-700 dark:text-blue-400"
+        >
+          View Details →
+        </Link>
       </div>
     </Card>
   );

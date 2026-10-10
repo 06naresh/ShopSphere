@@ -3,6 +3,7 @@ import { useState } from "react";
 import Button from "../../../shared/components/Button";
 import Card from "../../../shared/components/Card";
 import Input from "../../../shared/components/Input";
+import { useNavigate } from "react-router-dom";
 
 function CheckoutForm() {
   const [formData, setFormData] = useState({
@@ -22,6 +23,8 @@ function CheckoutForm() {
     useState(false);
   const [serverError, setServerError] =
     useState("");
+
+  const navigate = useNavigate();
 
   const validateField = (
     name,
@@ -221,6 +224,8 @@ function CheckoutForm() {
 
       setErrors({});
       setTouched({});
+
+      navigate("/order-success");
     } catch (error) {
       setServerError(
         "Something went wrong. Please try again."
