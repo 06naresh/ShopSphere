@@ -1,16 +1,27 @@
 import { useLocation, useNavigate } from "react-router-dom";
 import { useAuth } from "../features/auth";
 import { Button, Card } from "@mui/material";
+import { useEffect } from "react";
 
 function LoginPage() {
 
-    const {user, login} = useAuth();
+    const {user, login, loading} = useAuth();
 
     const navigate = useNavigate();
 
     const location = useLocation();
 
     const from = location.state?.from || "/";
+
+    useEffect(() => {
+        if(!loading && user){
+            return <p>Checking authentication...</p>
+        }
+    }, [user, loading, navigate, from]);
+
+    if(loading){
+        return <p>Redirecting...</p>
+    }
 
     if(user){
         navigate(from, {

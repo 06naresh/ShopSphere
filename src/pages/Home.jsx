@@ -95,7 +95,7 @@ function Home() {
 
     return (
         <div>
-            <section className="rounded-2xl bg-gradient-to-r from-blue-600 to-indigo-600 px-6 py-12 text-white sm:px-10">
+            <section className="rounded-2xl bg-linear-to-r from-blue-600 to-indigo-600 px-6 py-12 text-white sm:px-10">
                 <p className="mb-2 text-sm font-medium uppercase tracking-wide text-blue-100">
                     ShopSphere
                 </p>

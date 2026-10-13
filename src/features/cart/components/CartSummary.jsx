@@ -38,7 +38,7 @@ function CartSummary({ cart = [] }) {
             </span>
 
             <span className="font-medium text-gray-900 dark:text-white">
-              ₹
+              $
               {(
                 item.price *
                 item.quantity
@@ -52,7 +52,7 @@ function CartSummary({ cart = [] }) {
         <span>Total</span>
 
         <span>
-          ₹{total.toLocaleString()}
+          ${total.toLocaleString()}
         </span>
       </div>
     </Card>

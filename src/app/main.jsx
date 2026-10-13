@@ -52,7 +52,7 @@ function Root() {
           </Tooltip>
         </div>
 
-        <App />
+        <App/>
       </AuthProvider>
     </ThemeProvider>
   )

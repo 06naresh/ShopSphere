@@ -1,6 +1,8 @@
-import { NavLink, Outlet } from "react-router-dom";
+import { NavLink, Outlet, useOutletContext } from "react-router-dom";
 
 function ProductsLayout() {
+
+    const outletContext = useOutletContext();
 
         const navClass = ({isActive}) => 
             `
@@ -36,7 +38,7 @@ function ProductsLayout() {
                 </NavLink>
             </div>
 
-            <Outlet />
+            <Outlet context={outletContext}/>
         </section>
     )
 }

@@ -1,4 +1,4 @@
-import { Navigate, Outlet, useLocation } from "react-router-dom";
+import { Navigate, Outlet, useLocation, useOutletContext } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 function ProtectedRoute() {
@@ -6,6 +6,8 @@ function ProtectedRoute() {
     const {user, loading,} = useAuth();
 
     const location = useLocation();
+
+    const outletContext = useOutletContext();
 
     if(loading){
         return (
@@ -35,7 +37,7 @@ function ProtectedRoute() {
         );
     }
 
-    return <Outlet />;
+    return <Outlet context={outletContext}/>;
 }
 
 export default ProtectedRoute;

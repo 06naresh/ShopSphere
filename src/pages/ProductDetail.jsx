@@ -2,7 +2,7 @@ import { Link, useNavigate, useOutletContext, useParams } from "react-router-dom
 
 import Button from "../shared/components/Button";
 import Card from "../shared/components/Card";
-import { useProduct } from "../features/products/hooks/useProduct";
+import  useProduct  from "../features/products/hooks/useProduct";
 
 function ProductDetail() {
 

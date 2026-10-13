@@ -48,9 +48,7 @@ function CheckoutForm() {
         }
 
         if (
-          !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(
-            value
-          )
+          !/^[^\s@]+@[^\s@]+\.[^\s@]+$/.test(value)
         ) {
           return "Enter a valid email address.";
         }

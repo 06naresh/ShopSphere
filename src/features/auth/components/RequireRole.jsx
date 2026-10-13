@@ -1,13 +1,15 @@
-import { Outlet } from "react-router-dom";
+import { Navigate, Outlet, useOutletContext } from "react-router-dom";
 import { useAuth } from "../context/AuthContext";
 
 function RequireRole({ role }) {
 
     const { user } = useAuth();
 
+    const outletContext = useOutletContext();
+
     if(!user){
         return (
-            <Navigation
+            <Navigate
                 to="/login"
                 replace
             />
@@ -16,14 +18,14 @@ function RequireRole({ role }) {
 
     if(user.role !== role){
         return(
-            <Navigation
+            <Navigate
                 to="/access-denied"
                 replace
             />
         );
     }
 
-    return <Outlet />;
+    return <Outlet context={outletContext}/>;
 }
 
 export default RequireRole;

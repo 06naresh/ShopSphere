@@ -2,7 +2,7 @@ import { createContext, useContext, useEffect, useState } from "react";
 
 const AuthContext = createContext(null);
 
-function AuthProvider({childern}) {
+function AuthProvider({children}) {
 
     const [user, setUser] = useState(null);
 
@@ -49,7 +49,7 @@ function AuthProvider({childern}) {
                 logout,
             }}
         >
-            {childern}
+            {children}
         </AuthContext.Provider>
     );
 }
