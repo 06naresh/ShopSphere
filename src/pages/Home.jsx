@@ -1,6 +1,5 @@
 import { useOutletContext, useSearchParams } from "react-router-dom";
 
-import Header from "../features/layout/components/Header";
 
 import {
     SearchBar,
@@ -11,9 +10,6 @@ import {
     useProducts,
 } from "../features/products";
 
-import {
-    CartSummary,
-} from "../features/cart";
 
 function Home() {
     const { cart, addToCart, } = useOutletContext();
@@ -192,8 +188,6 @@ function Home() {
                         )}
                 </div>
             </section>
-
-            <CartSummary cart={cart} />
         </div >
     );
 }
